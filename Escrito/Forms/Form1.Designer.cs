@@ -44,21 +44,20 @@
             // 
             // txtTelefonos
             // 
-            this.txtTelefonos.Location = new System.Drawing.Point(180, 179);
-            this.txtTelefonos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefonos.Location = new System.Drawing.Point(120, 116);
             this.txtTelefonos.Multiline = true;
             this.txtTelefonos.Name = "txtTelefonos";
-            this.txtTelefonos.Size = new System.Drawing.Size(148, 161);
+            this.txtTelefonos.Size = new System.Drawing.Size(100, 106);
             this.txtTelefonos.TabIndex = 26;
+            this.txtTelefonos.TextChanged += new System.EventHandler(this.txtTelefonos_TextChanged);
             // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.Red;
             this.BtnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnSalir.Location = new System.Drawing.Point(180, 397);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSalir.Location = new System.Drawing.Point(120, 258);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(150, 35);
+            this.BtnSalir.Size = new System.Drawing.Size(100, 23);
             this.BtnSalir.TabIndex = 25;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -67,91 +66,82 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(25, 141);
-            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefono.Location = new System.Drawing.Point(17, 92);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(75, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(52, 13);
             this.lblTelefono.TabIndex = 24;
             this.lblTelefono.Text = "Direccion";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(25, 179);
-            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDireccion.Location = new System.Drawing.Point(17, 116);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(71, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(49, 13);
             this.lblDireccion.TabIndex = 23;
             this.lblDireccion.Text = "Telefono";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(25, 102);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellido.Location = new System.Drawing.Point(17, 66);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(65, 20);
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 22;
             this.lblApellido.Text = "Apellido";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(25, 62);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(17, 40);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(65, 20);
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 21;
             this.lblNombre.Text = "Nombre";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(25, 22);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Location = new System.Drawing.Point(17, 14);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(26, 20);
+            this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 20;
             this.lblID.Text = "ID";
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(180, 136);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccion.Location = new System.Drawing.Point(120, 88);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(148, 26);
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 19;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(180, 97);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellido.Location = new System.Drawing.Point(120, 63);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(148, 26);
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 18;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(180, 57);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Location = new System.Drawing.Point(120, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(148, 26);
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 17;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(180, 17);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Location = new System.Drawing.Point(120, 11);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(148, 26);
+            this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 16;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // BtnEnviar
             // 
-            this.BtnEnviar.Location = new System.Drawing.Point(180, 351);
-            this.BtnEnviar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnEnviar.Location = new System.Drawing.Point(120, 228);
             this.BtnEnviar.Name = "BtnEnviar";
-            this.BtnEnviar.Size = new System.Drawing.Size(150, 35);
+            this.BtnEnviar.Size = new System.Drawing.Size(100, 23);
             this.BtnEnviar.TabIndex = 15;
             this.BtnEnviar.Text = "Enviar";
             this.BtnEnviar.UseVisualStyleBackColor = true;
@@ -159,9 +149,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 443);
+            this.ClientSize = new System.Drawing.Size(254, 288);
             this.Controls.Add(this.txtTelefonos);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.lblTelefono);
@@ -174,6 +164,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.BtnEnviar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
