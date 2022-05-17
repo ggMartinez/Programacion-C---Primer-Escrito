@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Escrito.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Escrito.Classes
         private string apellido;
         private string telefono;
         private string direccion;
-
+        private const int ERRORID = 999; 
 
         public void SetId(int idRecibido)
         {
@@ -61,29 +62,49 @@ namespace Escrito.Classes
             return this.direccion;
         }
 
-        public void ValidarID()
+        public void ValidarID(string IdSinValidar)
         {
-            // Validar que sea numero, menor a 99
-        }
+            if (CantidadDeCaracteres(IdSinValidar, 99) && int.TryParse(IdSinValidar, out int result))
+            {
+                id = Int32.Parse(IdSinValidar); 
+            }
+            else
+            {
+                id = ERRORID;
+            }
+        } // Validar que sea numero, menor a 99
 
-        public void ValidarNombre()
+        public void ValidarNombre(string NombreSinValidar)
         {
-            // Validar que tenga menos de 20 caracteres
-        }
+            if (CantidadDeCaracteres(NombreSinValidar, 20))
+                nombre = NombreSinValidar;
+        }  // Validar que tenga menos de 20 caracteres
+        
 
-        public void ValidarApellido()
+        public void ValidarApellido(string ApellidoSinValidar)
         {
-            // Validar que tenga menos de 20 caracteres
-        }
+            if (CantidadDeCaracteres(ApellidoSinValidar, 20))
+                apellido = ApellidoSinValidar;
+        }// Validar que tenga menos de 20 caracteres
 
-        public void ValidarTelefono()
+        public void ValidarTelefono(string TelefonoSinValidar)
         {
-            // Validar que sea numero, de hasta 9 cifras
-        }
+            if (CantidadDeCaracteres(TelefonoSinValidar, 10))
+               telefono = TelefonoSinValidar;
+        }// Validar que sea numero, de hasta 9 cifras
 
-        public void ValidarDireccion()
+        public void ValidarDireccion(string DireccionSinValidar)
         {
-            // Validar que tenga menos de 50 caracteres
+            if (CantidadDeCaracteres(DireccionSinValidar, 50))
+                direccion = DireccionSinValidar;
+        }// Validar que tenga menos de 50 caracteres
+        public bool CantidadDeCaracteres(string cadena, int maximo)
+        {
+            if (cadena.Length < maximo)
+                return true;
+            else
+                return false;   
         }
+        
     }
 }
