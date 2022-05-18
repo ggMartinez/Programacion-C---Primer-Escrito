@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Escrito.Classes;
+using Escrito.Forms;
+
 namespace Escrito
 {
     public partial class Form1 : Form
     {
+        
+        Persona p = new Persona();
+
         public Form1()
         {
             InitializeComponent();
         }
+       
 
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
@@ -30,9 +36,33 @@ namespace Escrito
             formulario (el cual debe ser creado).
             */
 
-            Persona p = new Persona();
+            int id = Int32.Parse(txtId.Text); 
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string telefono = txtTelefonos.Text;
+            string direccion = txtDireccion.Text;
+                
+            p.ValidarID(id);
+            p.ValidarNombre(nombre);
+            p.ValidarApellido(apellido);
+            p.ValidarTelefono(telefono);
+            p.ValidarDireccion(direccion);
+               
+            int idEnviarFormularioDatos = p.GetId();
+            string nombreEviarFormularioDatos = p.GetNombre();
+            string apellidoEnviarFormularioDatos = p.GetApellido();
+            string telefonoEnviarFormularioDatos = p.GetTelefono();
+            string direccionEnviarFormularioDatos = p.GetDireccion();
+  
+            Form2 FormularioDatos = new Form2();
+            FormularioDatos.txtRecibidoId.Text = idEnviarFormularioDatos.ToString();
+            FormularioDatos.txtRecibidoNombre.Text = nombreEviarFormularioDatos;
+            FormularioDatos.txtRecibidoApellido.Text = apellidoEnviarFormularioDatos;
+            FormularioDatos.txtRecibidoTelefono.Text = telefonoEnviarFormularioDatos;
+            FormularioDatos.txtRecibidoDireccion.Text = direccionEnviarFormularioDatos;
 
-            // Agregar el codigo necesario luego de este punto
+            FormularioDatos.Show();
+            this.Hide();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
