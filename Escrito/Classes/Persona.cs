@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Escrito.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Escrito.Classes
 {
     public class Persona
-    {
+    { 
         private int id;
         private string nombre;
         private string apellido;
         private string telefono;
         private string direccion;
-
 
         public void SetId(int idRecibido)
         {
@@ -61,29 +62,130 @@ namespace Escrito.Classes
             return this.direccion;
         }
 
-        public void ValidarID()
+        public void ValidarID(int idSinVerificar)
         {
-            // Validar que sea numero, menor a 99
+            if (idSinVerificar <= 99)
+            {
+                id = idSinVerificar;
+            }
+
+            if (idSinVerificar > 99)
+            {
+                MessageBox.Show("El id:" + idSinVerificar.ToString() + " supera el rango");
+                id = 000;
+            }
+
         }
 
-        public void ValidarNombre()
+        public void ValidarNombre(string nombreSinVerificar)
         {
-            // Validar que tenga menos de 20 caracteres
+            int longitudNombre = nombreSinVerificar.Length;
+
+            if (longitudNombre <= 20)
+            {
+                nombre = nombreSinVerificar;   
+            }
+
+            if (longitudNombre > 20)
+            {
+                  MessageBox.Show("El nombre supera el rango de caracteres");
+                  nombre = "Error";
+            }
+
+            if (longitudNombre == 0)
+            {
+                MessageBox.Show("El nombre esta vacio");
+                nombre = "Error";
+            }
+
+
         }
 
-        public void ValidarApellido()
+        public void ValidarApellido(string apellidoSinVerificar)
         {
-            // Validar que tenga menos de 20 caracteres
+            int longitudApellido = apellidoSinVerificar.Length;
+
+            if (longitudApellido <= 20)
+            {
+                apellido = apellidoSinVerificar;
+            }
+
+            if (longitudApellido > 20)
+            {
+                  MessageBox.Show("El apellido supera el rango de caracteres");
+                  apellido = "Error";
+            }
+
+            if (longitudApellido == 0)
+            {
+                MessageBox.Show("El apellido esta vacio");
+                apellido = "Error";
+            }
+
+
         }
 
-        public void ValidarTelefono()
+        public void ValidarTelefono(string telefonoSinVerificar)
         {
-            // Validar que sea numero, de hasta 9 cifras
+            int longitudTelefono = telefonoSinVerificar.Length;
+
+            if (longitudTelefono <= 9)
+            {
+                telefono = telefonoSinVerificar;
+                
+            }
+
+            if (longitudTelefono > 9)
+            {
+                  MessageBox.Show("El telefono supera el rango de caracteres");
+                  telefono = "Error";
+
+            }
+
+            if (longitudTelefono == 0)
+            {
+                MessageBox.Show("El telefono esta vacio");
+                telefono = "Error";
+
+            }
+
+
         }
 
-        public void ValidarDireccion()
+        public void ValidarDireccion(string direccionSinVerificar)
         {
-            // Validar que tenga menos de 50 caracteres
+
+            int longitudDireccion = direccionSinVerificar.Length;
+
+            if (longitudDireccion <= 50)
+            {
+                direccion = direccionSinVerificar;
+                
+            }
+
+            if (longitudDireccion > 50)
+            {
+                  MessageBox.Show("La direccion supera el rango de caracteres");
+                  direccion = "Error";
+
+            }
+
+            if (longitudDireccion > 50)
+            {
+                MessageBox.Show("La direccion supera el rango de caracteres");
+                direccion = "Error";
+
+            }
+
+            if (longitudDireccion == 0)
+            {
+                MessageBox.Show("La direccion esta vacia");
+                direccion = "Error";
+
+            }
+
+
         }
+  
     }
 }
