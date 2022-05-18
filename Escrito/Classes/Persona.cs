@@ -61,29 +61,60 @@ namespace Escrito.Classes
             return this.direccion;
         }
 
-        public void ValidarID()
+        public bool ValidarID()
         {
             // Validar que sea numero, menor a 99
+            if (id >= 99)
+            {
+                System.Windows.Forms.MessageBox.Show("La id tiene que ser menor que 99");
+                return false;
+            }
+            else return true;
+            
         }
 
-        public void ValidarNombre()
+        public bool ValidarNombre()
         {
             // Validar que tenga menos de 20 caracteres
+            if(nombre.Length >= 20)
+            {
+                System.Windows.Forms.MessageBox.Show("El nombre tiene que ser menor a 20 caracteres");
+                return false;
+            }
+            return true;
         }
 
-        public void ValidarApellido()
+        public bool ValidarApellido()
         {
             // Validar que tenga menos de 20 caracteres
+            if (apellido.Length >= 20)
+            {
+                System.Windows.Forms.MessageBox.Show("El apellido tiene que ser menor a 20 caracteres");
+                return false;
+            }
+            return true;
         }
 
-        public void ValidarTelefono()
+        public bool ValidarTelefono()
         {
             // Validar que sea numero, de hasta 9 cifras
+            if (telefono.Length > 9)
+            {
+                System.Windows.Forms.MessageBox.Show("El telefono tiene que ser menor que 9 cifras");
+                return false;
+            }
+            else return true;
         }
 
-        public void ValidarDireccion()
+        public bool ValidarDireccion()
         {
             // Validar que tenga menos de 50 caracteres
+            if (direccion.Length > 9)
+            {
+                System.Windows.Forms.MessageBox.Show("La direccion tiene que ser menor que 50 caracteres");
+                return false;
+            }
+            else return true;
         }
     }
 }
