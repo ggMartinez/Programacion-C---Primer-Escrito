@@ -61,29 +61,58 @@ namespace Escrito.Classes
             return this.direccion;
         }
 
-        public void ValidarID()
+        public void ValidarID(string idSinValidar)
         {
-            // Validar que sea numero, menor a 99
+            int IdValidada;
+            bool validar = int.TryParse(idSinValidar, out IdValidada);
+            if (validar && IdValidada < 99)
+            {
+                
+                SetId(IdValidada);
+                  
+            }
+
+            
         }
 
-        public void ValidarNombre()
+        public void ValidarNombre(string NombreSinValidar)
         {
-            // Validar que tenga menos de 20 caracteres
+            if(NombreSinValidar.Length < 20)
+            {
+                SetNombre(NombreSinValidar);
+            }
+            
         }
 
-        public void ValidarApellido()
+        public void ValidarApellido(string ApellidoValidado)
         {
-            // Validar que tenga menos de 20 caracteres
+            if(ApellidoValidado.Length < 20)
+            {
+                SetApellido(ApellidoValidado);
+         }
+            
         }
 
-        public void ValidarTelefono()
+        public void ValidarTelefono(string TelefonoNoValidado)
         {
-            // Validar que sea numero, de hasta 9 cifras
+            int TelefonoValidado;
+            bool validar = int.TryParse(TelefonoNoValidado, out TelefonoValidado);
+
+                if(validar && TelefonoValidado.ToString().Length <= 9)
+            {
+                SetTelefono(TelefonoNoValidado);
+            }
+
+            
         }
 
-        public void ValidarDireccion()
+        public void ValidarDireccion(string DireccionNoValidada)
         {
-            // Validar que tenga menos de 50 caracteres
+            if(DireccionNoValidada.Length < 50)
+            {
+                SetDireccion(DireccionNoValidada);
+            }
+           
         }
     }
 }
