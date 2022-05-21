@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Escrito.Classes;
+using Escrito.Forms;
+
 namespace Escrito
 {
     public partial class Form1 : Form
@@ -16,7 +18,7 @@ namespace Escrito
         {
             InitializeComponent();
         }
-
+        
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
             /*
@@ -30,15 +32,40 @@ namespace Escrito
             formulario (el cual debe ser creado).
             */
 
+
             Persona p = new Persona();
 
             // Agregar el codigo necesario luego de este punto
+
+            string apellido = txtApellido.Text;
+            string nombre = txtNombre.Text;
+            string id = txtID.Text;
+            string telefono = txtTelefonos.Text;
+            string direccion = txtDireccion.Text;
+
+            bool todosValidos = p.ValidarTodos(apellido, nombre, id, telefono, direccion);
+
+            if (todosValidos == true)
+            {
+                p.SetApellido(apellido);
+                p.SetNombre(nombre);
+                p.SetId(int.Parse(id));
+                p.SetTelefono(telefono);
+                p.SetDireccion(direccion);
+                p.mostrarDatos();
+            }
+            else
+                MessageBox.Show("Existe algun error en los datos ingresador.\nCorrobore los datos e intentelo nuevamente.");
+            
+
+            
+        
+            
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
     }
 }
